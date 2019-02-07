@@ -13,8 +13,10 @@ import { DifficultySelectComponent } from './difficulty-select/difficulty-select
 import { RankingsComponent } from './rankings/rankings.component';
 import { RunComponent } from './run/run.component';
 
+import { TitlebarComponent } from './titlebar/titlebar.component';
+
 @NgModule({
-	declarations: [AppComponent, LevelSelectComponent, DifficultySelectComponent, RankingsComponent, RunComponent],
+	declarations: [AppComponent, LevelSelectComponent, DifficultySelectComponent, RankingsComponent, RunComponent, TitlebarComponent],
 	entryComponents: [],
 	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
 	providers: [StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -1,1 +1,18 @@
-<a href="/difficulty-select">Select a level</a>
+<app-titlebar [titleText]="'Select Level'"></app-titlebar>
+<ion-content>
+	<ion-card class="level-card" (click)="router.navigateByUrl('/difficulty-select')">
+		<ion-card-header>
+			<ion-card-title>Dam</ion-card-title>
+		</ion-card-header>
+	</ion-card>
+	<ion-card class="level-card" (click)="router.navigateByUrl('/difficulty-select')">
+		<ion-card-header>
+			<ion-card-title>Facility</ion-card-title>
+		</ion-card-header>
+	</ion-card>
+	<ion-card class="level-card" (click)="router.navigateByUrl('/difficulty-select')">
+		<ion-card-header>
+			<ion-card-title>Egypt</ion-card-title>
+		</ion-card-header>
+	</ion-card>
+</ion-content>

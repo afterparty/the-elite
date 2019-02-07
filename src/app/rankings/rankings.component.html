@@ -1,1 +1,21 @@
-<a href="/run">Select a run</a>
+<app-titlebar [titleText]="'Rankings'"></app-titlebar>
+<ion-content>
+	<ion-card class="run-card" (click)="router.navigateByUrl('/run')">
+		<ion-card-header>
+			<ion-card-title>Doug Bro</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>#1 - 0:53</ion-card-content>
+	</ion-card>
+	<ion-card class="run-card" (click)="router.navigateByUrl('/run')">
+		<ion-card-header>
+			<ion-card-title>Tom Dude</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>#2 - 0:54</ion-card-content>
+	</ion-card>
+	<ion-card class="run-card" (click)="router.navigateByUrl('/run')">
+		<ion-card-header>
+			<ion-card-title>Mark Man</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>#3 - 0:55</ion-card-content>
+	</ion-card>
+</ion-content>

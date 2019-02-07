@@ -4,11 +4,27 @@
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
 		<ion-title>
-			The-Elite
+			The Elite
 		</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-	this is the home page
+	<ion-card class="welcome-card" (click)="router.navigateByUrl('/level-select')">
+		<ion-card-header>
+			<ion-card-title>GoldenEye</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			Speedrun rankings
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card class="welcome-card" (click)="router.navigateByUrl('/level-select')">
+		<ion-card-header>
+			<ion-card-title>Perfect Dark</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			Speedrun rankings
+		</ion-card-content>
+	</ion-card>
 </ion-content>

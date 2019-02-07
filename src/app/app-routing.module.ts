@@ -16,10 +16,6 @@ const routes: Routes = [
 		loadChildren: './home/home.module#HomePageModule'
 	},
 	{
-		path: 'list',
-		loadChildren: './list/list.module#ListPageModule'
-	},
-	{
 		path: 'level-select',
 		component: LevelSelectComponent
 	},
