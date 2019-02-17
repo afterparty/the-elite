@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-difficulty-select',
 	templateUrl: './difficulty-select.component.html',
-	styleUrls: ['./difficulty-select.component.scss']
+	styleUrls: [ './difficulty-select.component.scss' ]
 })
 export class DifficultySelectComponent implements OnInit {
-	constructor(public router: Router) {}
+	stageId: number;
+	constructor(public router: Router, private route: ActivatedRoute) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.route.params.subscribe((params) => {
+			this.stageId = params.id;
+		});
+	}
 }

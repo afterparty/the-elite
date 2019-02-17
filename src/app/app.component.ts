@@ -17,12 +17,12 @@ export class AppComponent {
 		},
 		{
 			title: 'GoldenEye',
-			url: '/level-select',
+			url: '/level-select/goldeneye',
 			icon: 'eye'
 		},
 		{
 			title: 'Perfect Dark',
-			url: '/level-select',
+			url: '/level-select/perfectdark',
 			icon: 'star'
 		}
 	];

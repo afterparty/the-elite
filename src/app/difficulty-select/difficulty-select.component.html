@@ -1,16 +1,16 @@
 <app-titlebar [titleText]="'Select Difficulty'"></app-titlebar>
 <ion-content>
-	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings')">
+	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings/' + stageId + '/agent')">
 		<ion-card-header>
 			<ion-card-title>Agent</ion-card-title>
 		</ion-card-header>
 	</ion-card>
-	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings')">
+	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings/' + stageId + '/secretagent')">
 		<ion-card-header>
 			<ion-card-title>Secret Agent</ion-card-title>
 		</ion-card-header>
 	</ion-card>
-	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings')">
+	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings/' + stageId + '/00')">
 		<ion-card-header>
 			<ion-card-title>00</ion-card-title>
 		</ion-card-header>

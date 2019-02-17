@@ -16,25 +16,26 @@ const routes: Routes = [
 		loadChildren: './home/home.module#HomePageModule'
 	},
 	{
-		path: 'level-select',
+		path: 'level-select/:id',
+
 		component: LevelSelectComponent
 	},
 	{
-		path: 'difficulty-select',
+		path: 'difficulty-select/:id',
 		component: DifficultySelectComponent
 	},
 	{
-		path: 'rankings',
+		path: 'rankings/:id/:difficulty',
 		component: RankingsComponent
 	},
 	{
-		path: 'run',
+		path: 'run/:id',
 		component: RunComponent
 	}
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
+	imports: [ RouterModule.forRoot(routes) ],
+	exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

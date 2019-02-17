@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-rankings',
 	templateUrl: './rankings.component.html',
-	styleUrls: ['./rankings.component.scss']
+	styleUrls: [ './rankings.component.scss' ]
 })
 export class RankingsComponent implements OnInit {
-	constructor(public router: Router) {}
+	params: any;
+	constructor(public router: Router, private route: ActivatedRoute) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.route.params.subscribe((params) => {
+			this.params = params;
+		});
+	}
 }
