@@ -12,19 +12,19 @@
 <ion-content>
 	<ion-card class="welcome-card" (click)="router.navigateByUrl('/level-select/goldeneye')">
 		<ion-card-header>
-			<ion-card-title>GoldenEye</ion-card-title>
+			<ion-card-title class="welcome-button">
+				<img class="head-img" src="../../assets/bond.jpg">
+				<span class="head-text">GoldenEye</span>
+			</ion-card-title>
 		</ion-card-header>
-		<ion-card-content>
-			Speedrun rankings
-		</ion-card-content>
 	</ion-card>
 
 	<ion-card class="welcome-card" (click)="router.navigateByUrl('/level-select/perfectdark')">
 		<ion-card-header>
-			<ion-card-title>Perfect Dark</ion-card-title>
+			<ion-card-title class="welcome-button">
+				<span class="head-text">Perfect Dark</span>
+				<img class="head-img" src="../../assets/dark.jpg">
+			</ion-card-title>
 		</ion-card-header>
-		<ion-card-content>
-			Speedrun rankings
-		</ion-card-content>
 	</ion-card>
 </ion-content>
