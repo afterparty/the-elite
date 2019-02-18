@@ -7,17 +7,22 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @Component({
 	selector: 'app-rankings',
 	templateUrl: './rankings.component.html',
-	styleUrls: ['./rankings.component.scss']
+	styleUrls: [ './rankings.component.scss' ]
 })
 export class RankingsComponent implements OnInit {
 	levelId: number;
 	difficulty: string;
 	flatRuns: any;
 	runs: Run[] = [];
-	constructor(public router: Router, private route: ActivatedRoute, public http: HttpClient, private iab: InAppBrowser) {}
+	constructor(
+		public router: Router,
+		private route: ActivatedRoute,
+		public http: HttpClient,
+		private iab: InAppBrowser
+	) {}
 
 	ngOnInit() {
-		this.route.params.subscribe(params => {
+		this.route.params.subscribe((params) => {
 			this.levelId = params.id;
 			this.difficulty = params.difficulty;
 
@@ -51,7 +56,11 @@ export class RankingsComponent implements OnInit {
 	}
 
 	viewVideo(id: number) {
-		this.iab.create('https://rankings.the-elite.net/video/' + id);
+		const browser = this.iab.create('https://rankings.the-elite.net/video/' + id);
+
+		browser.on('loadstop').subscribe((event) => {
+			browser.insertCSS({ code: 'body{ background: #0f0f0f; } iframe{ width: 100vw; height: 50vh; }' });
+		});
 	}
 }
 
