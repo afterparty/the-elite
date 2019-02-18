@@ -8,12 +8,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LevelSelectComponent implements OnInit {
 	levelList: Level[];
+	game: string;
 
 	constructor(private route: ActivatedRoute, private router: Router) {}
 
 	ngOnInit() {
 		this.route.params.subscribe((params) => {
-			if (params.id === 'goldeneye') {
+			this.game = params.id;
+			if (this.game === 'goldeneye') {
 				this.levelList = [
 					{ id: 1, name: 'Dam', thumbUrl: '' },
 					{ id: 2, name: 'Facility', thumbUrl: '' },
@@ -36,7 +38,7 @@ export class LevelSelectComponent implements OnInit {
 					{ id: 19, name: 'Aztec', thumbUrl: '' },
 					{ id: 20, name: 'Egypt', thumbUrl: '' }
 				];
-			} else if (params.id === 'perfectdark') {
+			} else if (this.game === 'perfectdark') {
 				this.levelList = [
 					{ id: 21, name: 'Defection', thumbUrl: '' },
 					{ id: 22, name: 'Investigation', thumbUrl: '' },

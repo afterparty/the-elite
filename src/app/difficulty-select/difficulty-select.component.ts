@@ -8,11 +8,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DifficultySelectComponent implements OnInit {
 	stageId: number;
+	game: string;
 	constructor(public router: Router, private route: ActivatedRoute) {}
 
 	ngOnInit() {
 		this.route.params.subscribe((params) => {
 			this.stageId = params.id;
+			this.game = params.game;
 		});
 	}
 }

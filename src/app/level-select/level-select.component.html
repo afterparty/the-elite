@@ -1,6 +1,6 @@
 <app-titlebar [titleText]="'Select Level'"></app-titlebar>
 <ion-content>
-	<ion-card *ngFor="let level of levelList" class="level-card" (click)="router.navigateByUrl('/difficulty-select/' + level.id)">
+	<ion-card *ngFor="let level of levelList" class="level-card" (click)="router.navigateByUrl('/difficulty-select/' + game + '/' + level.id)">
 		<ion-card-header>
 			<ion-card-title>{{ level.name }}</ion-card-title>
 		</ion-card-header>

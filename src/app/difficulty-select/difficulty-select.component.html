@@ -12,7 +12,7 @@
 	</ion-card>
 	<ion-card class="difficulty-card" (click)="router.navigateByUrl('/rankings/' + stageId + '/00')">
 		<ion-card-header>
-			<ion-card-title>00</ion-card-title>
+			<ion-card-title>{{ game === 'goldeneye' ? '00 Agent' : 'Perfect Agent' }}</ion-card-title>
 		</ion-card-header>
 	</ion-card>
 </ion-content>

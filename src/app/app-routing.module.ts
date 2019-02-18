@@ -21,7 +21,7 @@ const routes: Routes = [
 		component: LevelSelectComponent
 	},
 	{
-		path: 'difficulty-select/:id',
+		path: 'difficulty-select/:game/:id',
 		component: DifficultySelectComponent
 	},
 	{
