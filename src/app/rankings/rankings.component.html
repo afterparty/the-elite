@@ -1,22 +1,11 @@
 <app-titlebar [titleText]="'Rankings'"></app-titlebar>
 <ion-content>
-	<!-- <ion-card class="run-card" (click)="router.navigateByUrl('/run')">
-		<ion-card-header>
-			<ion-card-title>Doug Bro</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>#1 - 0:53</ion-card-content>
-	</ion-card>
-	<ion-card class="run-card" (click)="router.navigateByUrl('/run')">
-		<ion-card-header>
-			<ion-card-title>Tom Dude</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>#2 - 0:54</ion-card-content>
-	</ion-card>
-	<ion-card class="run-card" (click)="router.navigateByUrl('/run')">
-		<ion-card-header>
-			<ion-card-title>Mark Man</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>#3 - 0:55</ion-card-content>
-	</ion-card> -->
-	{{ flatRuns }}
+	<a [href]="'https://rankings.the-elite.net/video/' + flatRuns[i+3]" class="card-counter" *ngFor="let item of flatRuns; let i = index">
+		<ion-card *ngIf="i % 7 === 0" class="run-card">
+			<ion-card-header>
+				<ion-card-title>{{ flatRuns[i] }}</ion-card-title>
+			</ion-card-header>
+			<ion-card-content>Rank: {{ i/7+1 }} | Time: {{ fancyTimeFormat(flatRuns[i+4]) }}</ion-card-content>
+		</ion-card>
+	</a>
 </ion-content>
