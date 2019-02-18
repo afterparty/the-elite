@@ -14,11 +14,12 @@ import { RankingsComponent } from './rankings/rankings.component';
 import { RunComponent } from './run/run.component';
 
 import { TitlebarComponent } from './titlebar/titlebar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [AppComponent, LevelSelectComponent, DifficultySelectComponent, RankingsComponent, RunComponent, TitlebarComponent],
 	entryComponents: [],
-	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
 	providers: [StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
 	bootstrap: [AppComponent]
 })

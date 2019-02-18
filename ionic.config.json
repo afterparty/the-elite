@@ -1,5 +1,7 @@
 {
-	"name": "The Elite",
-	"integrations": {},
-	"type": "angular"
+  "name": "The Elite",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
 }
