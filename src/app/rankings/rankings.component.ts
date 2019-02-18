@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
 	selector: 'app-rankings',
 	templateUrl: './rankings.component.html',
-	styleUrls: [ './rankings.component.scss' ]
+	styleUrls: ['./rankings.component.scss']
 })
 export class RankingsComponent implements OnInit {
 	levelId: number;
 	difficulty: string;
 	flatRuns: any;
 	runs: Run[] = [];
-	constructor(public router: Router, private route: ActivatedRoute, public http: HttpClient) {}
+	constructor(public router: Router, private route: ActivatedRoute, public http: HttpClient, private iab: InAppBrowser) {}
 
 	ngOnInit() {
-		this.route.params.subscribe((params) => {
+		this.route.params.subscribe(params => {
 			this.levelId = params.id;
 			this.difficulty = params.difficulty;
 
@@ -47,6 +48,10 @@ export class RankingsComponent implements OnInit {
 		ret += '' + mins + ':' + (secs < 10 ? '0' : '');
 		ret += '' + secs;
 		return ret;
+	}
+
+	viewVideo(id: number) {
+		this.iab.create('https://rankings.the-elite.net/video/' + id);
 	}
 }
 
