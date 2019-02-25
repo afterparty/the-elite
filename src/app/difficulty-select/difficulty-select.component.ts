@@ -4,12 +4,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'app-difficulty-select',
 	templateUrl: './difficulty-select.component.html',
-	styleUrls: [ './difficulty-select.component.scss' ]
+	styleUrls: ['./difficulty-select.component.scss']
 })
 export class DifficultySelectComponent implements OnInit {
 	stageId: number;
 	game: string;
-	constructor(public router: Router, private route: ActivatedRoute) {}
+	constructor(public router: Router, private route: ActivatedRoute) { }
 
 	ngOnInit() {
 		this.route.params.subscribe((params) => {

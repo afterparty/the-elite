@@ -1,16 +1,18 @@
 <app-titlebar [titleText]="'Rankings'"></app-titlebar>
 <ion-content>
-	<div *ngIf="!flatRuns[0]">
-		<ion-spinner></ion-spinner>
+	<div *ngIf="!flatRuns">
+		<div style="height: 86vh; display: flex; align-items:center;">
+			<ion-spinner></ion-spinner>
+		</div>
 	</div>
 
-	<div *ngIf="flatRuns[0]">
+	<div *ngIf="flatRuns">
 		<div class="card-counter" *ngFor="let item of flatRuns; let i = index">
 			<ion-card *ngIf="i % 7 === 0" class="run-card" (click)="viewVideo(flatRuns[i + 3])">
 				<ion-card-header>
 					<ion-card-title>{{ flatRuns[i] }}</ion-card-title>
 				</ion-card-header>
-				<ion-card-content>Rank: {{ i / 7 + 1 }} | Time: {{ fancyTimeFormat(flatRuns[i + 4]) }}</ion-card-content>
+				<ion-card-content>Rank: {{ computeRank(i) }} | Time: {{ fancyTimeFormat(flatRuns[i + 4]) }}</ion-card-content>
 			</ion-card>
 		</div>
 	</div>

@@ -7,7 +7,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @Component({
 	selector: 'app-rankings',
 	templateUrl: './rankings.component.html',
-	styleUrls: [ './rankings.component.scss' ]
+	styleUrls: ['./rankings.component.scss']
 })
 export class RankingsComponent implements OnInit {
 	levelId: number;
@@ -19,7 +19,7 @@ export class RankingsComponent implements OnInit {
 		private route: ActivatedRoute,
 		public http: HttpClient,
 		private iab: InAppBrowser
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.route.params.subscribe((params) => {
@@ -61,6 +61,13 @@ export class RankingsComponent implements OnInit {
 		browser.on('loadstop').subscribe((event) => {
 			browser.insertCSS({ code: 'body{ background: #0f0f0f; } iframe{ width: 100vw; height: 50vh; }' });
 		});
+	}
+
+	computeRank(i: number) {
+		if (i === 0) return i + 1;
+		else if (this.flatRuns[i + 4] === this.flatRuns[i - 3]) {
+			return this.computeRank(i - 7);
+		} else return i / 7 + 1;
 	}
 }
 
